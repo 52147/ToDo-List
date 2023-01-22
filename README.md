@@ -13,3 +13,10 @@ After I modified my json file(key map value and do not have comma in last docume
 
 What I found interested of built a full stack website by myself is that when the webiste is sucessfully released, all the time working on the project is worth it.    
 
+
+## 概述
+
+1. 使用Express做框架。
+
+
+
