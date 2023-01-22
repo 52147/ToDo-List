@@ -17,6 +17,9 @@ What I found interested of built a full stack website by myself is that when the
 ## 概述
 
 1. 使用Express做框架。
+2. 使用MongoDB來儲存todo list 中的數據。
+3. 是用路由(route)來要求不同的數據，然後利用引擎來生成html。
+4. 部屬todo list 在 cyclic。
 
 
 
