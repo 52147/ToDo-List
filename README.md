@@ -23,3 +23,10 @@ What I found interested of built a full stack website by myself is that when the
 
 
 
+## 實現
+
+### 創建骨架
+
+### 使用DB
+
+### host 網站
