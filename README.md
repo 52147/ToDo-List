@@ -54,15 +54,15 @@ https://www.npmjs.com/package/nodemon/v/1.18.10
 使用MVC軟體架構來設計網頁。     
 
 model : 導入mongoose module來對mongodb 做操作。創建兩個collection，一個為list collection，用來儲存所有list name，裡面包含一個 item collection，用來儲存指定list中的item。
-```
+```javascript
 const mongoose = require("mongoose");
 ```    
 view : 使用ejs模板引擎來利用模板文件渲染頁面。    
-```
+```javascript
 app.set('view engine', 'ejs');
 ```
 controller: 路由處理器來給予不同http request對應的操作。
-```    
+```javascript    
 app.get("/", function (req, res) {
     ...
     res.render(...);
@@ -107,20 +107,20 @@ app.get("/:customListName", function (req, res) {
 https://hackmd.io/@Heidi-Liu/note-be201-express-node
 ### 使用DB
 #### 1. 連接到 MongoDB
-```    
+```javascript    
 mongoose.connect("mongodb+srv://123:123@cluster0.qc3xle7.mongodb.net/todolistDB", {
   useNewUrlParser: true
 });
 ```
 #### 2. 定義Schema     
 items 的schema，用來儲存不同的items名稱在對應的list。
-```      
+``` javascript     
 const itemSchema = {
   name: String
 };
 ```
 list 的schema，用來儲存不同的list名稱於list collcetion，其中內容有包含item 的collection。
-```      
+```javascript      
 const listSchema = {
   name: String,
   items: [itemSchema]
@@ -128,11 +128,11 @@ const listSchema = {
 ```      
 #### 3. 創建模型     
 Item的模型
-```      
+``` javascript     
 const Item = mongoose.model("Item", itemSchema);
 ```
 List 的模型
-```      
+```  javascript    
 const List = mongoose.model("List", listSchema);
 ```      
 #### 4. 更新，刪除和查詢     
@@ -141,7 +141,7 @@ const List = mongoose.model("List", listSchema);
     
 <collection_name>.save(): 儲存更新過的的document。      
     
-插入doc   
+插入 
     
 <collection_name>.insertMany(...): 插入很多doc      
     
