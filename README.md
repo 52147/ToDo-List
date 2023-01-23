@@ -106,13 +106,13 @@ app.get("/:customListName", function (req, res) {
 ```
 https://hackmd.io/@Heidi-Liu/note-be201-express-node
 ### 使用DB
-1. 連接到 MongoDB
+#### 1. 連接到 MongoDB
 ```    
 mongoose.connect("mongodb+srv://123:123@cluster0.qc3xle7.mongodb.net/todolistDB", {
   useNewUrlParser: true
 });
 ```
-2. 定義Schema     
+#### 2. 定義Schema     
 items 的schema，用來儲存不同的items名稱在對應的list。
 ```      
 const itemSchema = {
@@ -126,7 +126,7 @@ const listSchema = {
   items: [itemSchema]
 };
 ```      
-3. 創建模型     
+#### 3. 創建模型     
 Item的模型
 ```      
 const Item = mongoose.model("Item", itemSchema);
@@ -135,7 +135,7 @@ List 的模型
 ```      
 const List = mongoose.model("List", listSchema);
 ```      
-4. 更新，刪除和查詢     
+#### 4. 更新，刪除和查詢     
     
 儲存      
     
