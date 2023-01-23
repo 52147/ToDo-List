@@ -158,5 +158,5 @@ const List = mongoose.model("List", listSchema);
     
 
 ### host 網站
-
+將網站利用cyclic佈署在雲端伺服器上。
 ## 自動化測試
