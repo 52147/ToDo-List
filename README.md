@@ -21,8 +21,29 @@ What I found interested of built a full stack website by myself is that when the
 3. 使用路由(route)來要求不同的數據，然後利用模板引擎來渲染數據生成html，然後顯示到瀏覽器上。
 4. 佈署todo list 在 cyclic。
 
+## Set Up
+用 npm init 來為project 創建一個 package.json
+```
+npm init
+```
+安裝 express
+```
+npm install express
+```
+安裝 nodemon
+```
+npm install -g nodemon
+```
+使用nodemon使 node project在本地主機上運行
+```
+nodemon index.js
+```
 
+    
+    
+https://expressjs.com/en/starter/installing.html    
 
+https://www.npmjs.com/package/nodemon/v/1.18.10
 ## 實現
 
 ### 創建骨架
