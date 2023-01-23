@@ -47,7 +47,16 @@ https://www.npmjs.com/package/nodemon/v/1.18.10
 ## 實現
 
 ### 創建骨架
+使用MVC軟體架構來設計網頁。     
 
+model : 導入mongoose module來對mongodb 做操作。     
+
+view : 使用ejs模板引擎來利用模板文件渲染頁面。    
+
+controller: 路由處理器來給予不同http request對應的操作。    
+    
+    
+https://hackmd.io/@Heidi-Liu/note-be201-express-node
 ### 使用DB
 
 ### host 網站
