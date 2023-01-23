@@ -135,17 +135,27 @@ List 的模型
 ```      
 const List = mongoose.model("List", listSchema);
 ```      
-4. 更新，刪除和查詢
-儲存
-<collection_name>.save(): 儲存更新過的的document。
-插入doc
-<collection_name>.insertMany(...): 插入很多doc
+4. 更新，刪除和查詢     
+    
+儲存      
+    
+<collection_name>.save(): 儲存更新過的的document。      
+    
+插入doc   
+    
+<collection_name>.insertMany(...): 插入很多doc      
+    
 
-查詢
-<collection_name>.find(...): 查詢所有 doc
-<collection_name>.findOne(...): 查詢一個 doc
-<collection_name>.findByIdAndRemove()
-<collection_name>.findOneAndUpdate()
+查詢      
+    
+<collection_name>.find(...): 查詢所有 doc   
+    
+<collection_name>.findOne(...): 查詢一個 doc    
+    
+<collection_name>.findByIdAndRemove()   
+    
+<collection_name>.findOneAndUpdate()    
+    
 
 ### host 網站
 
