@@ -22,13 +22,17 @@ What I found interested of built a full stack website by myself is that when the
 4. 佈署todo list 在 cyclic。
 
 ## Set Up
-用 npm init 來為project 創建一個 package.json
+用 npm init 來為project 創建一個 package.json，之後可以利用 npm <dependency> 來將 dependency 加到 package.json 中。
 ```
 npm init
 ```
 安裝 express
 ```
 npm install express
+```
+安裝 mongoose
+```
+npm install mongoose
 ```
 安裝 nodemon
 ```
@@ -60,3 +64,5 @@ https://hackmd.io/@Heidi-Liu/note-be201-express-node
 ### 使用DB
 
 ### host 網站
+
+## 自動化測試
