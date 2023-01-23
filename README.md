@@ -34,7 +34,7 @@ npm install express
 ```
 npm install -g nodemon
 ```
-使用nodemon使 node project在本地主機上運行
+使用nodemon，讓 node project 被nodemon 監視，如果project有被修改，nodemon會自動重新在本地主機上運行
 ```
 nodemon index.js
 ```
