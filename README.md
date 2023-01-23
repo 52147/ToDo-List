@@ -53,16 +53,50 @@ https://www.npmjs.com/package/nodemon/v/1.18.10
 ### 創建骨架
 使用MVC軟體架構來設計網頁。     
 
-model : 導入mongoose module來對mongodb 做操作。     
-
+model : 導入mongoose module來對mongodb 做操作。
+```
+const mongoose = require("mongoose");
+```    
 view : 使用ejs模板引擎來利用模板文件渲染頁面。    
-
-controller: 路由處理器來給予不同http request對應的操作。    
-    
+```
+app.set('view engine', 'ejs');
+```
+controller: 路由處理器來給予不同http request對應的操作。
+```    
+app.get("/", function (req, res) {
+    ...
+    res.render(...);
+    }
+```    
     
 https://hackmd.io/@Heidi-Liu/note-be201-express-node
 ### 使用DB
-
+1. 連接到 MongoDB
+```    
+mongoose.connect("mongodb+srv://123:123@cluster0.qc3xle7.mongodb.net/todolistDB", {
+  useNewUrlParser: true
+});
+```
+2. 定義Schema
+```      
+const itemSchema = {
+  name: String
+};
+```  
+```      
+const listSchema = {
+  name: String,
+  items: [itemSchema]
+};
+```      
+3. 創建模型
+```      
+const Item = mongoose.model("Item", itemSchema);
+```
+```      
+const List = mongoose.model("List", listSchema);
+```      
+4. 更新，刪除和查詢
 ### host 網站
 
 ## 自動化測試
