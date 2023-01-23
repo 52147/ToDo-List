@@ -1,12 +1,15 @@
-//jshint esversion:6
+//利用 jshint 來檢查代碼錯誤
 
+// 利用 require() 來引用模塊
 // use require() to load express and body-parser module
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose"); // require mongoose module
 const _ = require('lodash');
+const { render } = require("ejs");
 
 
+// 使用 node.js 框架 express
 // create an express application
 const app = express();
 
@@ -56,6 +59,16 @@ app.use(bodyParser.urlencoded({
 
 // use middleware to access static file via http
 app.use(express.static("public"));
+let today = new Date();
+let options = {
+  weekday: "long",
+  day: "numeric",
+  month: "long",
+
+
+};
+let day = today.toLocaleDateString("en-US", options);
+
 
 // send data back when receive get request from the path '/'
 app.get("/", function (req, res) {
@@ -76,7 +89,7 @@ app.get("/", function (req, res) {
       res.redirect("/"); // redirect to / (root browser)
     } else {
       res.render("list", {
-        listTitle: "Today",
+        listTitle: day,
         newListItems: foundItems
       });
     }
@@ -109,9 +122,14 @@ app.get("/", function (req, res) {
 
 });
 
+// get url 中的路由參數以指定對應的list
 app.get("/:customListName", function (req, res) {
+
+  // 保存路由參數
   const customListName = _.capitalize(req.params.customListName);
 
+  // 查詢 List Collection 中是否有對應的 List 名稱，如果沒找到的話，在List collection 創建一個新的list document
+  // ，有的話將頁面導向那個list名稱的url
   List.findOne({
     name: customListName
   }, function (err, foundList) {
@@ -133,8 +151,6 @@ app.get("/:customListName", function (req, res) {
       }
     }
   });
-
-
 });
 
 
@@ -148,7 +164,7 @@ app.post("/", function (req, res) {
     name: itemName
   });
 
-  if (listName === "Today") {
+  if (listName === day) {
     item.save();
     res.redirect("/");
   } else {
@@ -167,7 +183,7 @@ app.post("/delete", function (req, res) {
   const checkedItemId = req.body.checkbox;
   const listName = req.body.listName;
 
-  if (listName === "Today") {
+  if (listName === day) {
     Item.findByIdAndRemove(checkedItemId, function (err) {
       if (!err) {
         console.log("Successfully deleted checked item.");
@@ -192,7 +208,7 @@ app.post("/delete", function (req, res) {
 
 });
 
-
+// Q: how to make about page show?????
 app.get("/about", function (req, res) {
   res.render("about");
 });
